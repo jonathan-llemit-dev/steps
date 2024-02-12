@@ -10,6 +10,7 @@ export default function App() {
   // state composes of 2 elements the 1st is variable and 2nd is the function the can be called to manipulate the variable
   // dont set/change state manually
   const [step, setStep] = useState(1);
+  const [isOpen, setIsOpen] = useState(true);
 
   function handlePrevious() {
     // implementing a useState function on event handler
