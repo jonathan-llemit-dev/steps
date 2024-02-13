@@ -7,6 +7,16 @@ const messages = [
 ];
 
 export default function App() {
+  return (
+    <div>
+      {/* each states on each component is isolated only on its parent component and will not affected by other component */}
+      <Steps />
+      <Steps />
+    </div>
+  );
+}
+
+function Steps() {
   // state composes of 2 elements the 1st is variable and 2nd is the function the can be called to manipulate the variable
   // dont set/change state manually
   const [step, setStep] = useState(1);
@@ -14,16 +24,22 @@ export default function App() {
 
   function handlePrevious() {
     // implementing a useState function on event handler
-    setStep(step > 1 ? step - 1 : step);
+    // setStep(step > 1 ? step - 1 : step);
+    // this is much better way to use arrow function inside the setter function of a state to avoid errors
+    if (step > 1) setStep((s) => s - 1);
   }
 
   function handleNext() {
-    setStep(step < 3 ? step + 1 : step);
+    // setStep(step < 3 ? step + 1 : step);
+    if (step < 3) setStep((s) => s + 1);
   }
 
   return (
-    <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+    <div>
+      <button
+        className="close"
+        onClick={() => setIsOpen((isOpenOrClose) => !isOpenOrClose)}
+      >
         &times;
       </button>
 
@@ -55,6 +71,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
