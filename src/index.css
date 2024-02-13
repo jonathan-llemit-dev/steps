@@ -15,12 +15,18 @@ body {
   color: #333;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .steps {
   width: 600px;
   background-color: #f7f7f7;
   border-radius: 7px;
   padding: 25px 100px;
-  margin: 100px auto;
 }
 
 .numbers {
@@ -96,4 +102,17 @@ h3 {
 
 .close:hover {
   color: #7950f2;
+}
+
+.counter {
+  width: 600px;
+  background-color: #f7f7f7;
+  border-radius: 7px;
+  padding: 25px 100px;
+}
+
+.counter div {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }

@@ -8,10 +8,11 @@ const messages = [
 
 export default function App() {
   return (
-    <div>
+    <div className="container">
       {/* each states on each component is isolated only on its parent component and will not affected by other component */}
       <Steps />
       <Steps />
+      <Counter />
     </div>
   );
 }
@@ -71,6 +72,22 @@ function Steps() {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function Counter() {
+  // declaring a usestate
+  const [multiplier, setMultiplier] = useState(1);
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className="counter">
+      <div>
+        <h1>Date Counter</h1>
+        <p>Multiplier: {multiplier}</p>
+        <p>Count: {count}</p>
+      </div>
     </div>
   );
 }
