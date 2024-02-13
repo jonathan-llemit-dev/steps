@@ -84,18 +84,22 @@ function Counter() {
   return (
     <div className="counter">
       <div>
-        <h1>Date Counter</h1>
+        <h1>Counter</h1>
         <p>
-          <button>-</button>
+          <button onClick={() => setMultiplier((m) => --m)}>-</button>
           Multiplier: {multiplier}
-          <button>+</button>
+          <button onClick={() => setMultiplier((m) => ++m)}>+</button>
         </p>
         <p>
-          <button>-</button>
+          <button onClick={() => setCount((c) => c - multiplier)}>-</button>
           Count: {count}
-          <button>+</button>
+          <button onClick={() => setCount((c) => c + multiplier)}>+</button>
         </p>
-        <p>Total Count: </p>
+        <p>
+          Total Count:
+          {count === 0 ? " Zero " : count > 0 ? " Positive " : " Negative "}
+          {Math.abs(count)}
+        </p>
       </div>
     </div>
   );
