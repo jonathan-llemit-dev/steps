@@ -85,8 +85,17 @@ function Counter() {
     <div className="counter">
       <div>
         <h1>Date Counter</h1>
-        <p>Multiplier: {multiplier}</p>
-        <p>Count: {count}</p>
+        <p>
+          <button>-</button>
+          Multiplier: {multiplier}
+          <button>+</button>
+        </p>
+        <p>
+          <button>-</button>
+          Count: {count}
+          <button>+</button>
+        </p>
+        <p>Total Count: </p>
       </div>
     </div>
   );
