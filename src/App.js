@@ -81,6 +81,10 @@ function Counter() {
   const [multiplier, setMultiplier] = useState(0);
   const [count, setCount] = useState(0);
 
+  function handleMultiplier(event) {
+    setMultiplier(Number(event.target.value));
+  }
+
   return (
     <div className="counter">
       <div>
@@ -93,7 +97,7 @@ function Counter() {
             type="range"
             min={0}
             max={10}
-            onChange={(event) => setMultiplier(Number(event.target.value))}
+            onChange={handleMultiplier}
             value={multiplier}
           />
           {multiplier}
