@@ -98,6 +98,10 @@ function Counter() {
     setCount(0);
   }
 
+  function handleCountInput(event) {
+    setCount(Number(event.target.value));
+  }
+
   return (
     <div className="counter">
       <div>
@@ -117,7 +121,12 @@ function Counter() {
         </p>
         <p>
           <button onClick={handleSubtract}>-</button>
-          <input type="number" style={{ maxWidth: "60px" }} value={count} />
+          <input
+            type="number"
+            style={{ maxWidth: "60px" }}
+            value={count}
+            onChange={handleCountInput}
+          />
           <button onClick={handleAdd}>+</button>
         </p>
         <p>
