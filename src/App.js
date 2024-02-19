@@ -78,7 +78,7 @@ function Steps() {
 
 function Counter() {
   // declaring a usestate
-  const [multiplier, setMultiplier] = useState(1);
+  const [multiplier, setMultiplier] = useState(0);
   const [count, setCount] = useState(0);
 
   return (
@@ -86,9 +86,17 @@ function Counter() {
       <div>
         <h1>Counter</h1>
         <p>
-          <button onClick={() => setMultiplier((m) => --m)}>-</button>
+          {/* <button onClick={() => setMultiplier((m) => --m)}>-</button>
           Multiplier: {multiplier}
-          <button onClick={() => setMultiplier((m) => ++m)}>+</button>
+          <button onClick={() => setMultiplier((m) => ++m)}>+</button> */}
+          <input
+            type="range"
+            min={0}
+            max={10}
+            onChange={(event) => setMultiplier(Number(event.target.value))}
+            value={multiplier}
+          />
+          {multiplier}
         </p>
         <p>
           <button onClick={() => setCount((c) => c - multiplier)}>-</button>
