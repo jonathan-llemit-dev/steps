@@ -125,7 +125,11 @@ function Counter() {
           {count === 0 ? " Zero " : count > 0 ? " Positive " : " Negative "}
           {Math.abs(count)}
         </p>
-        <button onClick={handleReset}>Reset</button>
+        {multiplier !== 0 || count !== 0 ? (
+          <button onClick={handleReset}>Reset</button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
