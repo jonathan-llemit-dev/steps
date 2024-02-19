@@ -85,6 +85,10 @@ function Counter() {
     setMultiplier(Number(event.target.value));
   }
 
+  function handleSubtract() {
+    setCount((c) => c - multiplier);
+  }
+
   return (
     <div className="counter">
       <div>
@@ -103,7 +107,7 @@ function Counter() {
           {multiplier}
         </p>
         <p>
-          <button onClick={() => setCount((c) => c - multiplier)}>-</button>
+          <button onClick={handleSubtract}>-</button>
           Count: {count}
           <button onClick={() => setCount((c) => c + multiplier)}>+</button>
         </p>
