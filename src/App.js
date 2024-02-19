@@ -93,6 +93,11 @@ function Counter() {
     setCount((c) => c + multiplier);
   }
 
+  function handleReset() {
+    setMultiplier(0);
+    setCount(0);
+  }
+
   return (
     <div className="counter">
       <div>
@@ -120,6 +125,7 @@ function Counter() {
           {count === 0 ? " Zero " : count > 0 ? " Positive " : " Negative "}
           {Math.abs(count)}
         </p>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
