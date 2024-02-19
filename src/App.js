@@ -117,7 +117,7 @@ function Counter() {
         </p>
         <p>
           <button onClick={handleSubtract}>-</button>
-          Count: {count}
+          <input type="number" style={{ maxWidth: "60px" }} value={count} />
           <button onClick={handleAdd}>+</button>
         </p>
         <p>
